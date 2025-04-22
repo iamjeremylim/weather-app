@@ -1,12 +1,10 @@
-"use client";
-
 import { useSearch } from "@/app/utils";
 import { Search, Trash2 } from "feather-icons-react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: #ffffff33;
+  background-color: var(--color-white-2);
   padding: 23px 20px 23px 20px;
   border-radius: 24px;
   margin-top: 24px;
@@ -24,7 +22,7 @@ const Entries = styled.div`
 
 const Entry = styled.div`
   display: flex;
-  background-color: #ffffff66;
+  background-color: var(--color-white-4);
   border-radius: 16px;
   padding: 13px 15px 13px 21px;
   align-items: center;
@@ -48,7 +46,7 @@ const Actions = styled.div`
 
 const IconWrapper = styled.div`
   padding: 9px;
-  background-color: #ffffff;
+  background-color: var(--color-white-10);
   border-radius: 50%;
   height: 2.125rem;
   width: 2.125rem;
@@ -63,19 +61,25 @@ const SearchHistory = () => {
     <Wrapper>
       <div>Search History</div>
 
-      <Entries>
+      <Entries className="entries">
         {history.map((query, index) => (
-          <Entry key={index}>
+          <Entry key={index} className="entry">
             <CountryTimestamp>
               <div>{query.country}</div>
               <div>{query.timestamp}</div>
             </CountryTimestamp>
             <Actions>
               <IconWrapper>
-                <Search onClick={() => handleSearch(query.country)} />
+                <Search
+                  onClick={() => handleSearch(query.country)}
+                  data-testid={`search-icon-${index}`}
+                />
               </IconWrapper>
               <IconWrapper>
-                <Trash2 onClick={() => filterHistory(index)} />
+                <Trash2
+                  onClick={() => filterHistory(index)}
+                  data-testid={`delete-icon-${index}`}
+                />
               </IconWrapper>
             </Actions>
           </Entry>

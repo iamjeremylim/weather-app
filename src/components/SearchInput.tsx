@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 
 const StyledInput = styled.input`
   border-radius: 20px;
-  background-color: #ffffff33;
+  background-color: var(--color-white-2);
   border: none;
   height: 100%;
   flex: 1 1 80%;
@@ -42,14 +42,14 @@ const FloatingLabel = styled.label`
   transform: translateY(-50%);
   font-size: 16px;
   transition: transform 0.3s ease-out;
-  color: hsla(0, 0%, 0%, 0.4);
+  color: var(--color-dark-grey);
 `;
 
 const StyledIcon = styled.div`
   padding: 13px;
-  background-color: #6c40b5;
+  background-color: var(--color-purple);
   border-radius: 17px;
-  color: #ffffff;
+  color: var(--color-white-10);
 `;
 
 const SearchInput = () => {
@@ -69,6 +69,7 @@ const SearchInput = () => {
       <FloatingLabel htmlFor="country-input">Country</FloatingLabel>
       <StyledIcon>
         <Search
+          data-testid="search-icon"
           onClick={() => {
             setInput("");
             handleSearch(input);

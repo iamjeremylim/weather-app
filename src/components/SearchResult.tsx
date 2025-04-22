@@ -12,8 +12,8 @@ const Wrapper = styled.div`
   width: 100%;
   border-radius: 40px;
   padding: clamp(20px, 5vw, 40px);
-  border: 1px solid hsla(0, 0%, 100%, 0.5);
-  background-color: hsla(0, 0%, 100%, 0.2);
+  border: 1px solid var(--color-white-5);
+  background-color: var(--color-white-2);
   position: relative;
 
   .sun {

@@ -1,14 +1,15 @@
+import React from "react";
 import SearchInput from "./SearchInput";
 import SearchResult from "./SearchResult";
-import styled from "styled-components";
 import SearchProvider from "./SearchProvider";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Search = () => {
+const SearchComponent = () => {
   return (
     <SearchProvider>
       <Wrapper>
@@ -19,4 +20,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchComponent;

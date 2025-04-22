@@ -17,12 +17,12 @@ const Wrapper = styled.div`
     .curr_temperature {
       font-size: 5rem;
       font-weight: bold;
-      color: hsla(263, 48%, 48%, 1);
+      color: var(--color-purple);
     }
 
     .curr_country {
       font-weight: 700;
-      color: hsla(0, 0%, 40%, 1);
+      color: var(--color-grey);
     }
   }
 
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
     width: 65%;
     flex-flow: column-reverse;
     align-items: flex-end;
-    color: hsla(0, 0%, 40%, 1);
+    color: var(--color-grey);
   }
 
   @media (min-width: 768px) {
