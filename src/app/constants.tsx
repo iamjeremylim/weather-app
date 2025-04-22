@@ -1,7 +1,5 @@
 import { History } from "./types";
 
-const API_KEY = "daa59cae03dfedf5ecb9471addca3e3f";
-
 const DEFAULT_QUERY = {
   name: "Singapore",
   lat: 1.2899175,

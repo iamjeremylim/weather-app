@@ -7,7 +7,6 @@ import {
   SearchProgress,
   WeatherData,
 } from "@/app/types";
-import { API_KEY } from "@/app/constants";
 
 export const SearchContext = React.createContext<SearchContextType | undefined>(
   undefined
@@ -24,7 +23,7 @@ const SearchProvider = ({ children }: SearchProviderProps) => {
   const getCoordinates = async (query: string): Promise<Coordinate[]> => {
     try {
       const result = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${API_KEY}`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${process.env.NEXT_PUBLIC_API_KEY}`
       );
       return result.json();
     } catch (error) {
@@ -36,7 +35,7 @@ const SearchProvider = ({ children }: SearchProviderProps) => {
   const getWeather = async ({ lat, lon }: Coordinate): Promise<WeatherData> => {
     try {
       const result = await fetch(
-        `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`
       );
       return result.json();
     } catch (error) {
